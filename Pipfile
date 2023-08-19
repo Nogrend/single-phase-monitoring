@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+sdm-modbus = "*"
+paho-mqtt = "*"
 
 [dev-packages]
 
