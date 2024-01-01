@@ -19,7 +19,7 @@ class PhaseMeter:
     def get_measurement(self) -> Dict:
         if not self.device.connected():
             return {"status": "not connected"}
-        results = self.device.read_all(1)
+        results = self.device.read_all(sdm_modbus.registerType.INPUT)
         print(results)
         return results
         # return self.device.read_all(1) # sdm_modbus.registerType.INPUT
