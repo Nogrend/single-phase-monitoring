@@ -1,11 +1,9 @@
-from phase_meter import PhaseMeter
-
 from dotenv import load_dotenv
-
-from client2broker import Client2Broker
 
 load_dotenv()
 
+from phase_meter import PhaseMeter
+from client2broker import Client2Broker
 
 if __name__ == "__main__":
     phase_meter = PhaseMeter()
@@ -20,4 +18,3 @@ if __name__ == "__main__":
 
         is_running = False
         print("stop")
-
