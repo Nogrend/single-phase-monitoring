@@ -1,3 +1,5 @@
+from time import sleep
+
 from dotenv import load_dotenv
 from phase_meter import PhaseMeter
 from client2broker import Client2Broker
@@ -14,7 +16,11 @@ if __name__ == "__main__":
     while is_running:
         measurement = phase_meter.get_measurement()
         client_2_broker.sent_to_broker(measurement)
-
+        sleep(10)
+        measurement = phase_meter.get_measurement()
+        client_2_broker.sent_to_broker(measurement)
+        sleep(10)
+        measurement = phase_meter.get_measurement()
+        client_2_broker.sent_to_broker(measurement)
         is_running = False
-        print("stop")
-        client_2_broker.sent_to_broker({"status": "dead"})
+    client_2_broker.sent_to_broker({"status": "dead"})
