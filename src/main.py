@@ -17,10 +17,5 @@ if __name__ == "__main__":
         measurement = phase_meter.get_measurement()
         client_2_broker.sent_to_broker(measurement)
         sleep(10)
-        measurement = phase_meter.get_measurement()
-        client_2_broker.sent_to_broker(measurement)
-        sleep(10)
-        measurement = phase_meter.get_measurement()
-        client_2_broker.sent_to_broker(measurement)
-        is_running = False
+        # is_running = False
     client_2_broker.sent_to_broker({"status": "dead"})
