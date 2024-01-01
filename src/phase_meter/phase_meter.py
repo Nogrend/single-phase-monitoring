@@ -11,10 +11,6 @@ class PhaseMeter:
                                         baud=9600,
                                         parity="N")
 
-        com_port = os.getenv("COM_PORT")
-        modbus_address = 1  # Replace with the correct Modbus address
-        baud_rate = 9600  # Replace with the correct baud rate
-        parity = "N"
         # self.device = sdm_modbus.SDM120(device=os.getenv("COM_PORT"),
         #                                 unit=int(os.getenv("MODBUS_ADDRESS")),
         #                                 baud=int(os.getenv("BAUD_RATE")),
