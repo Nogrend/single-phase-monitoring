@@ -1,7 +1,13 @@
 ### Single phase monitoring
 
+```shell
+python3 -m venv venv
+```
 
-Run api
-```sh
-uvicorn main:app --reload
+```shell
+pip install -r requirements.txt
+```
+
+```shell
+pip freeze > requirements.txt
 ```
