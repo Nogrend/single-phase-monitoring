@@ -15,4 +15,3 @@ class PhaseMeter:
         if not self.device.connected():
             return {"status": "not connected"}
         return self.device.read_all(sdm_modbus.registerType.INPUT)
-        # return results
