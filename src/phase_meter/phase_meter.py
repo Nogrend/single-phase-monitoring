@@ -6,7 +6,7 @@ import sdm_modbus
 
 class PhaseMeter:
     def __init__(self):
-        self.phaseMeter = sdm_modbus.SDM120(device=os.getenv("COM_PORT"),
+        self.device = sdm_modbus.SDM120(device=os.getenv("COM_PORT"),
                                             unit=os.getenv("MODBUS_ADDRESS"),
                                             baud=int(os.getenv("BAUD_RATE")),
                                             parity=os.getenv("PARITY"))

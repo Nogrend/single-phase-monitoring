@@ -16,7 +16,6 @@ if __name__ == "__main__":
     is_running: bool = True
     while is_running:
         measurement = phase_meter.get_measurement()
-        measurement = {"voltage": 230}
         client_2_broker.sent_to_broker(measurement)
 
         is_running = False
