@@ -1,4 +1,5 @@
 from time import sleep
+from datetime import datetime
 
 from dotenv import load_dotenv
 from phase_meter import PhaseMeter
@@ -15,6 +16,7 @@ if __name__ == "__main__":
     is_running: bool = True
     while is_running:
         measurement = phase_meter.get_measurement()
+        measurement["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         client_2_broker.sent_to_broker(measurement)
         sleep(10)
         # is_running = False
