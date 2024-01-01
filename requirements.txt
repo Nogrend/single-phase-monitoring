@@ -2,4 +2,5 @@ paho-mqtt==1.6.1
 pymodbus==3.6.2
 pyserial==3.5
 pyserial-asyncio==0.6
+python-dotenv==1.0.0
 sdm-modbus==0.7.0
