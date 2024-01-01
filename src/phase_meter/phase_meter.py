@@ -16,4 +16,4 @@ class PhaseMeter:
             return {}
         print(sdm_modbus.registerType.INPUT)
         print(type(sdm_modbus.registerType.INPUT))
-        return self.device.read_all(int(sdm_modbus.registerType.INPUT))
+        return self.device.read_all(1)
