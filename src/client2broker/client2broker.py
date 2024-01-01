@@ -3,7 +3,6 @@ import os
 import paho.mqtt.client as mqtt
 from json import dumps
 
-
 class Client2Broker:
     def __init__(self):
         self.client = mqtt.Client()
