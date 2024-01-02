@@ -18,6 +18,6 @@ if __name__ == "__main__":
         measurement = phase_meter.get_measurement()
         measurement["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         client_2_broker.sent_to_broker(measurement)
-        sleep(10)
+        sleep(60)
         # is_running = False
     client_2_broker.sent_to_broker({"status": "dead"})
