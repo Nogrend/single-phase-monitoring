@@ -32,7 +32,7 @@ class Client2Broker:
         print("Connected to MQTT Broker with result code " + str(rc))
 
     @staticmethod
-    def build_payload_with_id_and_timestamp(self, content: Dict) -> Dict:
+    def build_payload_with_id_and_timestamp(content: Dict) -> Dict:
         payload: Dict = content
         payload["id"] = str(uuid.uuid4())
         payload["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
