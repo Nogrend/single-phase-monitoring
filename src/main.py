@@ -19,7 +19,7 @@ if __name__ == "__main__":
     is_running: bool = True
     quantities: List = ["power_active", "total_energy_active"]
     while is_running:
-        measurement = phase_meter.get_measurement_with_quantities()
+        measurement = phase_meter.get_measurement_with_quantities(quantities)
 
         if measurement == {}:
             content = {"message": "no data received"}
