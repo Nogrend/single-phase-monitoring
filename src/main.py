@@ -10,7 +10,8 @@ if __name__ == "__main__":
     phase_meter = PhaseMeter()
     mqtt = Client2Broker()
 
-    payload = mqtt.build_payload_with_id_and_timestamp({"message": "starting script"})
+    content = {"message": "starting script"}
+    payload = mqtt.build_payload_with_id_and_timestamp(content)
     mqtt.sent_to_broker(payload, Client2Broker.AllowedTopics.STATUS)
 
     is_running: bool = True
@@ -18,8 +19,8 @@ if __name__ == "__main__":
         measurement = phase_meter.get_measurement()
 
         if measurement == {}:
-            content = ""
-            payload = mqtt.build_payload_with_id_and_timestamp({"message": "no data received"})
+            content = {"message": "no data received"}
+            payload = mqtt.build_payload_with_id_and_timestamp(content)
             mqtt.sent_to_broker(payload, Client2Broker.AllowedTopics.STATUS)
 
         else:
@@ -28,5 +29,6 @@ if __name__ == "__main__":
 
         sleep(60)
 
-    payload = mqtt.build_payload_with_id_and_timestamp({"message": "script down"})
+    content = {"message": "script down"}
+    payload = mqtt.build_payload_with_id_and_timestamp(content)
     mqtt.sent_to_broker(payload, Client2Broker.AllowedTopics.STATUS)
