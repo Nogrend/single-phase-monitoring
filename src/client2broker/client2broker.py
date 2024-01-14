@@ -15,7 +15,7 @@ class Client2Broker:
         TOTAL_ENERGY_ACTIVE = "measurement/totalEnergyActive"
 
     def __init__(self):
-        self.topic_base = os.getenv("MQTT_TOPIC")
+        self.topic_base = os.getenv("MQTT_TOPIC_BASE")
 
         self.client = mqtt.Client()
         self.client.username_pw_set(username=os.getenv("MQTT_USERNAME"),
@@ -38,8 +38,8 @@ class Client2Broker:
         payload["timestamp"] = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
         return payload
 
-    def sent_to_broker(self, payload, topic: AllowedTopics) -> None:
+    def sent_to_broker(self, payload, topic_part: AllowedTopics) -> None:
         measurement_dump: str = dumps(payload)
-        topic = self.topic_base + topic
+        topic = self.topic_base + str(topic_part.value)
         self.client.publish(topic=topic,
                             payload=measurement_dump)
