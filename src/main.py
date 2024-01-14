@@ -1,4 +1,6 @@
 from time import sleep
+from typing import List
+
 from dotenv import load_dotenv
 
 from phase_meter import PhaseMeter
@@ -15,8 +17,9 @@ if __name__ == "__main__":
     mqtt.sent_to_broker(payload, Client2Broker.AllowedTopics.STATUS)
 
     is_running: bool = True
+    quantities: List = ["power_active", "total_energy_active"]
     while is_running:
-        measurement = phase_meter.get_measurement()
+        measurement = phase_meter.get_measurement_with_quantities()
 
         if measurement == {}:
             content = {"message": "no data received"}

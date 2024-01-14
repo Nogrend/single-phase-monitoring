@@ -12,6 +12,7 @@ class Client2Broker:
     class AllowedTopics(Enum):
         STATUS = "status"
         MEASUREMENT_ALL = "measurement/all"
+        POWER_ACTIVE = "measurement/powerActive"
         TOTAL_ENERGY_ACTIVE = "measurement/totalEnergyActive"
 
     def __init__(self):
