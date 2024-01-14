@@ -40,6 +40,6 @@ class Client2Broker:
 
     def sent_to_broker(self, payload, topic: AllowedTopics) -> None:
         measurement_dump: str = dumps(payload)
-        topic = self.topic_base = topic
+        topic = self.topic_base + topic
         self.client.publish(topic=topic,
                             payload=measurement_dump)
