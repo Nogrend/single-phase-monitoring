@@ -23,6 +23,6 @@ class PhaseMeter:
         measurements: Dict = {}
 
         for quantity in quantities:
-            measurements[quantity] = self.device.read(quantity, precision=2)
+            measurements[quantity] = self.device.read_input(quantity, precision=2)
 
         return measurements
